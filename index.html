@@ -8,14 +8,44 @@
 </head>
 <body>
     <header class="header">
-        <a href="/">
+        <a href="/api_prueba">
             <h1 class="centrar title ">API de Productos</h1>
         </a>
         
     </header>
     <section>
-        <h2 class="title title-black centrar">Lista de Productos</h2>
-        <div id="productos" class="productos shadow"></div>
+        
+        <div class="main">
+            <div class="ctn-rangos">
+                <h2>Agregar Producto</h2>
+                <div class="centrar-boton">
+                    <a href="crear.html" class="centrar icono">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M9 12h6" />
+                            <path d="M12 9v6" />
+                        </svg>
+                    </a>
+                </div>
+                <aside class="rangos">
+                
+                    <a id="rango-precio">Todos</a>
+                    <a id="rango-precio">$100</a>
+                    <a id="rango-precio">$200</a>
+                    <a id="rango-precio">$300</a>
+                    <a id="rango-precio">$400</a>
+                    <a id="rango-precio">$500</a>
+                </aside>
+            </div>
+            
+            <div class="productos-ctn">
+                <h2 class="title title-black centrar">Lista de Productos</h2>
+                <div id="productos" class="productos shadow"></div>
+            </div>
+            
+            
+        </div>
     </section>
     <footer class="header">
         <a href="/">

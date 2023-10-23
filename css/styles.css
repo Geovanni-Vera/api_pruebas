@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap');
-body{
+*{
     margin: 0;
     padding: 0;
-    background-color: rgb(229 231 235);
+}
+body{
+  
+    background-color: rgb(21, 24, 30);
     font-family: 'Roboto', sans-serif;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;   
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 /*Utilidades*/
@@ -15,7 +27,7 @@ a{
 }
 .title{
     margin: 0;
-    padding: 20px;
+    padding: 0;
     text-transform: uppercase;
     color: rgb(218, 214, 214);
 }
@@ -23,12 +35,23 @@ a{
     color: black;
     padding: 10px;
 }
+.pd-10{
+    padding: 10px;
+}
+.pd-20{
+    padding: 20px;
+}
+
+.w-full{
+    width: 100%;
+    margin: 0 auto;
+}
 .shadow{box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);}
 /*Hero*/
 .header{
     margin: 0;
     padding: 60px;
-    background-color: rgb(90, 77, 61);
+    background-color:rgb(64, 145, 208);
 }
 
 .menu{
@@ -37,11 +60,29 @@ a{
     padding: 20px;
     gap: 20px;
 }
+.header h1{
+    font-size: 3rem;
+}
 .menu a{
     color: aliceblue;
     text-transform: uppercase;
     text-decoration: none;
+    font-size: 2rem;
 }
+/*Contenedor principal*/
+.main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+@media (min-width: 768px){
+    /* Estilos para tablets */
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
 /*contenedor de productos*/
 .productos{
     width: 80%;
@@ -53,18 +94,25 @@ a{
     padding: 30px;
     place-items: center;
     gap: 30px;
+   
+    
 }
+
 
 @media (min-width: 768px) and (max-width: 1023px) {
     /* Estilos para tablets */
     .productos{
         grid-template-columns: repeat(2,1fr);
+        /*overflow-y: scroll;*/
+    
     }
 }
 @media (min-width: 1024px) {
     /* Estilos para computadoras */
     .productos{
-        grid-template-columns: repeat(4,1fr);
+    
+        grid-template-columns: repeat(3,1fr);
+        
     }
   }
 
@@ -84,15 +132,114 @@ a{
     flex-direction: column;
     justify-content: space-around;
 }
-.producto h2 {
+.productos-ctn h2 {
     text-transform: uppercase;
     font-weight: bold;
-    font-family: 24px;
+    font-family: 3rem;
+    font-size: 2.5rem;
+    color: aliceblue;
+}
+.producto h2{
+    font-size: 2.5rem;
 }
 .producto .precio{
     color: rgb(111, 186, 224);
    
 }
 .producto p{
-    font-size: 20px;
+    font-size: 2rem;
+}
+.iconos{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.icono{
+    cursor: pointer;
+}
+.centrar-boton{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+/*aside*/
+.rangos{
+    margin: 10px auto ;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;   
+    margin-bottom:30px;
+}
+@media (min-width: 768px){
+    /* Estilos para tablets */
+    .rangos{
+        flex-direction: row;
+        margin: 0 auto;
+        width: 100%;  
+    }
+}
+.ctn-rangos h2{
+    text-align: center;
+    color: aliceblue;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+.rangos a, .rangos h2{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+.rangos a{
+    color: rgb(64, 145, 208);
+    font-size: 2rem;
+   
+}
+.rangos a:hover{
+    color: darkorange;
+    border-bottom: 1px solid darkorange;
+    cursor: pointer;
+}
+
+/*Formularios*/
+.formulario{
+    width: 80%;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: aliceblue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.formulario h3{
+    font-size: 2rem;
+}
+.formulario label{
+    font-size: 1.5rem;
+}
+.formulario textarea{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 15rem;
+    min-height: 15rem;
+    max-height: 15rem;
+}
+
+@media (min-width: 768px)  {
+    /* Estilos para tablets */
+    .formulario{
+        width: 30%;
+
+    }
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
 }

@@ -9,6 +9,6 @@ if($connect){
     $query = "DELETE FROM productos WHERE id = '$id'";
     $resultado = $db ->query($query);
     if($resultado){
-        header("location: /api_prueba/index.html");
+        header("location: /api_pruebas/index.html");
     }
 }

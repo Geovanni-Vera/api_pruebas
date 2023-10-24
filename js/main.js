@@ -53,15 +53,14 @@ fetch('php/api-productos.php')
         footer.classList.toggle('header-n');
     
         let productosprecio = document.querySelectorAll(".precio");
-        productosprecio.forEach(function (producto) {
-            if (producto.classList.contains('precio')) {
-                producto.classList.remove('precio');
-                producto.classList.add('precio-n');
-            } else if (producto.classList.contains('precio-n')) {
-                producto.classList.remove('precio-n');
-                producto.classList.add('precio');
-            }
+        productosprecio.forEach( producto => {
+            producto.classList.remove('precio');
+            producto.classList.add('precio-n');
+            console.log(producto);
         });
+        
+
+        
     
         let changeIcon = document.querySelector("#iconochange");
         changeIcon.classList.toggle('iconochange');

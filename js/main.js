@@ -1,16 +1,16 @@
 // Consumir la API productos
 fetch('php/api-productos.php')
-.then(response => response.json())
-.then(data => {
-    let productosDiv = document.getElementById('productos');
-    // Para cada producto hacer:
-    data.forEach(producto => {
-        // Crear un div para el producto
-        let productoDiv = document.createElement('div');
-        productoDiv.className = 'producto';
-        
-        // Generar el HTML para el producto
-        productoDiv.innerHTML = `
+    .then(response => response.json())
+    .then(data => {
+        let productosDiv = document.getElementById('productos');
+        // Para cada producto hacer:
+        data.forEach(producto => {
+            // Crear un div para el producto
+            let productoDiv = document.createElement('div');
+            productoDiv.className = 'producto';
+
+            // Generar el HTML para el producto
+            productoDiv.innerHTML = `
             <h2>${producto.nombre}</h2>
             <p>${producto.descripcion}</p>
             <p class="precio">\$${producto.precio}</p>
@@ -36,9 +36,35 @@ fetch('php/api-productos.php')
             </div>
 
         `;
-        productoDiv.classList.add('shadow');
-        
-        // Agregar el producto al div de productos
-        productosDiv.appendChild(productoDiv);
+            productoDiv.classList.add('shadow');
+
+            // Agregar el producto al div de productos
+            productosDiv.appendChild(productoDiv);
+        });
+    })
+
+    let change = document.querySelector('#change');
+    change.addEventListener('click', () => {
+        let header = document.querySelector('#header');
+        let footer = document.querySelector('#footer');
+        header.classList.toggle('header');
+        header.classList.toggle('header-n');
+        footer.classList.toggle('header');
+        footer.classList.toggle('header-n');
+    
+        let productosprecio = document.querySelectorAll(".precio");
+        productosprecio.forEach(function (producto) {
+            if (producto.classList.contains('precio')) {
+                producto.classList.remove('precio');
+                producto.classList.add('precio-n');
+            } else if (producto.classList.contains('precio-n')) {
+                producto.classList.remove('precio-n');
+                producto.classList.add('precio');
+            }
+        });
+    
+        let changeIcon = document.querySelector("#iconochange");
+        changeIcon.classList.toggle('iconochange');
+        changeIcon.classList.toggle('iconochange-n');
     });
-})
+    

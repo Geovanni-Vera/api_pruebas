@@ -10,7 +10,7 @@ if($connect){
     $query = "INSERT INTO productos (nombre, descripcion, precio) VALUES ('$nombre','$descripcion','$precio');";
     $resultado = $db ->query($query);
     if($resultado){
-        header("location: /api_prueba/index.html");
+        header("location: /api_pruebas/index.html");
     }
 }
 

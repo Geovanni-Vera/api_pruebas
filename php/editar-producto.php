@@ -14,6 +14,6 @@ if($connect){
     $query = "UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', precio = '$precio' WHERE id = '$id'";
     $resultado = $db ->query($query);
     if($resultado){
-        header("location: /api_prueba/index.html");
+        header("location: /api_pruebas/index.html");
     }
 }
